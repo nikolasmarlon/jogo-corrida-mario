@@ -25,7 +25,7 @@ function verificarPosicao(){
     const marioPosicao = +window.getComputedStyle(mario).bottom.replace('px', '')
    
 
-    if (pipePosicao <= 125 && pipePosicao > 0 && marioPosicao < 99 ){
+    if (pipePosicao <= 50  && pipePosicao > 0 && marioPosicao < 42){
         
         nuvem.style.animation = 'none'
         nuvem.style.left  = `${nuvemPosicao}px`
@@ -39,11 +39,12 @@ function verificarPosicao(){
         
 
         mario.src = './assets/game-over.png'
-        mario.style.width = '75px'
-        mario.style.marginLeft = '50px'
+        mario.style.width = '25px'
+        mario.style.marginLeft = '20px'
 
-        clearInterval(loop)
+        clearInterval(loop) 
     }
 }
 
 document.addEventListener('keydown', pular)
+document.addEventListener('touchstart', pular);
